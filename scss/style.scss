@@ -1,0 +1,96 @@
+@import 'reset.css';
+@import '_var';
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+}
+
+.screen{
+    margin: 1rem;
+}
+.container{
+    border: solid 2px $black;
+    box-shadow: 8px 8px $gray;
+    width: 100%;
+    max-width: 480px;
+    height: 80vh;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .input-wrap{
+        display: flex;
+        margin: 1rem;
+
+        input[type=text]{
+            width: 100%;
+            margin-right: .5rem;
+            @include input;
+        }
+
+        input[type=submit]{
+            @include button;
+        }
+
+        button{
+            @include button;
+            display: flex;
+            align-items: center;
+        }
+
+    }
+}
+
+ul{
+    padding: 0;
+    margin: .8rem;
+    overflow: scroll;
+
+    li{
+        border-bottom: solid 1px $gray;
+        padding-bottom: 1rem;
+        overflow: scroll;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        margin: 1rem;
+
+        &:last-child{
+            border-bottom: none;
+        }
+        
+        .list-wrap{
+            width: 60%;
+            word-wrap: break-word; 
+            overflow:hidden;
+        }
+        
+        .button-wrap{
+            display: flex;
+            justify-content: space-between;
+                button{
+                    font-size: 10px;
+                    @include button;
+                    width: 60px;
+                    display: flex;
+                    justify-content: center;
+
+                    &:first-child{
+                        margin-right: .4rem;
+                    }
+                    i{
+                        margin-right: .4rem;
+                    }
+
+                }
+
+        }
+    }
+}

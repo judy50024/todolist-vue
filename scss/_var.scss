@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src:  
+        url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+}
+
+
+$black: #060000;
+$gray: #535353;
+$white: #ffffff;
+$green: #0cb886;
+$light-green: #24d4a2;
+
+@mixin button{
+    border: none;
+    background-color: $black;
+    color: $white;
+    padding: 8px 32px;
+    
+    i{
+        margin-right: .4rem;
+    }
+
+    &:hover{
+        background-color: $gray;
+    }
+}
+
+@mixin input {
+    border: solid 1.5px $black;
+    border-radius: 0;
+    padding: .5rem;
+
+    &:focus{
+        outline: none;
+        border: solid 1.5px $gray;
+        border-radius: 0;
+    }
+
+}
