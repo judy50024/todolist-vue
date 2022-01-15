@@ -1,4 +1,4 @@
-@import url(/Users/judy/Desktop/todolist-vue/todolist-vue/scss/reset.css);
+@import url(/Users/judy/Desktop/todolist-vue/css/reset.css);
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -50,15 +50,15 @@ body {
 .container .input-wrap input[type=text] {
   width: 100%;
   margin-right: .5rem;
-  border: solid 1.5px #060000;
+  border: solid 2px #060000;
   border-radius: 0;
   padding: .5rem;
 }
 
 .container .input-wrap input[type=text]:focus {
   outline: none;
-  border: solid 1.5px #535353;
-  border-radius: 0;
+  -webkit-filter: opacity(60%);
+          filter: opacity(60%);
 }
 
 .container .input-wrap input[type=submit] {
@@ -128,6 +128,80 @@ ul li .list-wrap {
   width: 60%;
   word-wrap: break-word;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul li .list-wrap input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url(../icon/circle-regular.svg) no-repeat;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+ul li .list-wrap input[type=checkbox]:hover {
+  -webkit-filter: opacity(60%);
+          filter: opacity(60%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+ul li .list-wrap input[type=checkbox]:checked {
+  background: url(../icon/check-circle-solid.svg) no-repeat;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@-webkit-keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+ul li .list-wrap input[type=checkbox] + span {
+  position: relative;
+}
+
+ul li .list-wrap input[type=checkbox]:checked + span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #060000;
+  -webkit-animation-name: strike;
+          animation-name: strike;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 ul li .button-wrap {
@@ -140,7 +214,7 @@ ul li .button-wrap {
 }
 
 ul li .button-wrap button {
-  font-size: 10px;
+  font-size: 12px;
   border: none;
   background-color: #060000;
   color: #ffffff;
@@ -168,5 +242,17 @@ ul li .button-wrap button:first-child {
 
 ul li .button-wrap button i {
   margin-right: .4rem;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  color: #060000;
+}
+
+footer a:hover {
+  color: #535353;
 }
 /*# sourceMappingURL=style.css.map */

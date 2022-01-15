@@ -23,7 +23,7 @@
                 <!-- <input type="submit" value="add" @click="storeTodo"> -->
             </div>
             <div v-else class="input-wrap">
-                <input type="text" v-model="todo">
+                <input type="text" v-model="todo" @keyup.enter="storeTodo">
                 <input type="submit" value="update" @click="updateTodo">
             </div>
 
@@ -31,7 +31,7 @@
                 <li v-for="(todo, index) in todos">
                     <span class="list-wrap">
                         <input type="checkbox">
-                        {{ todo }}
+                        <span>{{ todo }}</span>
                     </span>
                     <span class="button-wrap">
                         <button @click="editTodo(index, todo)">
@@ -77,17 +77,25 @@
                     this.todo = ''
                 },
 
-                deleteTodo(index){
-                    this.todos.splice(index, 1)
-                    console.log("${todo.content}")
-                    // let result = confirm(`Are you sure you wanna delete"${todo.content}"?`);
-                    // if (result){
-                    //     cosole.log('Yes, delete it.');
-                    // }
+                deleteTodo(todo,index){
+                    
+                    console.log(`${todo.content}`)
+                    let result = confirm(`Are you sure you wanna delete?`);
+                    if (result){
+                        this.todos.splice(index, 1)
+                    }
                 }
 
             }
         })
     </script>
+
+<footer>
+    Made with love by 
+    <a href="https://www.linkedin.com/in/judy50024/" target="_blank">
+    Judy Li
+    </a>
+    &copy; 2022
+</footer>
 </body>
 </html>
