@@ -12,12 +12,14 @@
 $black: #060000;
 $gray: #535353;
 $white: #ffffff;
+$red: #f50a3d;
 
 @mixin button{
     border: none;
     background-color: $black;
     color: $white;
-    padding: 8px 32px;
+    padding: 8px 24px;
+    cursor: pointer;
     
     i{
         margin-right: .4rem;
@@ -25,6 +27,17 @@ $white: #ffffff;
 
     &:hover{
         background-color: $gray;
+    }
+}
+
+@mixin button-frame{
+    border: solid 1px $black;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover{
+        border: solid 1px $red;
+        color: $red;
     }
 }
 

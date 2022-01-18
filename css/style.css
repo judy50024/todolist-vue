@@ -65,7 +65,8 @@ body {
   border: none;
   background-color: #060000;
   color: #ffffff;
-  padding: 8px 32px;
+  padding: 8px 24px;
+  cursor: pointer;
 }
 
 .container .input-wrap input[type=submit] i {
@@ -80,7 +81,8 @@ body {
   border: none;
   background-color: #060000;
   color: #ffffff;
-  padding: 8px 32px;
+  padding: 8px 24px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,7 +138,70 @@ ul li .list-wrap {
           align-items: center;
 }
 
-ul li .list-wrap input[type=checkbox] {
+ul li .button-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ul li .button-wrap .edit {
+  font-size: 12px;
+  border: none;
+  background-color: #060000;
+  color: #ffffff;
+  padding: 8px 24px;
+  cursor: pointer;
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul li .button-wrap .edit i {
+  margin-right: .4rem;
+}
+
+ul li .button-wrap .edit:hover {
+  background-color: #535353;
+}
+
+ul li .button-wrap .edit:first-child {
+  margin-right: .4rem;
+}
+
+ul li .button-wrap .edit i {
+  margin-right: .4rem;
+}
+
+ul li .delete {
+  border: solid 1px #060000;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul li .delete:hover {
+  border: solid 1px #f50a3d;
+  color: #f50a3d;
+}
+
+.cta {
+  border: solid 1px #060000;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cta:hover {
+  border: solid 1px #f50a3d;
+  color: #f50a3d;
+}
+
+#done {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -149,14 +214,14 @@ ul li .list-wrap input[type=checkbox] {
   transition: .3s;
 }
 
-ul li .list-wrap input[type=checkbox]:hover {
+#done:hover {
   -webkit-filter: opacity(60%);
           filter: opacity(60%);
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-ul li .list-wrap input[type=checkbox]:checked {
+#done:checked {
   background: url(../icon/check-circle-solid.svg) no-repeat;
   -webkit-transition: .3s;
   transition: .3s;
@@ -180,11 +245,11 @@ ul li .list-wrap input[type=checkbox]:checked {
   }
 }
 
-ul li .list-wrap input[type=checkbox] + span {
+#done + span {
   position: relative;
 }
 
-ul li .list-wrap input[type=checkbox]:checked + span::before {
+#done:checked + span::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -204,44 +269,30 @@ ul li .list-wrap input[type=checkbox]:checked + span::before {
           animation-fill-mode: forwards;
 }
 
-ul li .button-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+#star {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url(../icon/star-regular.svg) no-repeat;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
-ul li .button-wrap button {
-  font-size: 12px;
-  border: none;
-  background-color: #060000;
-  color: #ffffff;
-  padding: 8px 32px;
-  width: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+#star:hover {
+  -webkit-filter: opacity(60%);
+          filter: opacity(60%);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
-ul li .button-wrap button i {
-  margin-right: .4rem;
-}
-
-ul li .button-wrap button:hover {
-  background-color: #535353;
-}
-
-ul li .button-wrap button:first-child {
-  margin-right: .4rem;
-}
-
-ul li .button-wrap button i {
-  margin-right: .4rem;
+#star:checked {
+  background: url(../icon/star-solid.svg) no-repeat;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 footer {
