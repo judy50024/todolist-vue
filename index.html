@@ -20,7 +20,6 @@
                     Add
                 </button>   
 
-                <!-- <input type="submit" value="add" @click="storeTodo"> -->
             </div>
             <div v-else class="input-wrap">
                 <input type="text" v-model="todo" @keyup.enter="storeTodo">
@@ -38,7 +37,6 @@
                         &nbsp
                         <input type="checkbox" id="star">
           
-
                     </span>
                     <span class="button-wrap">
                         <button @click="editTodo(index, todo)" class="edit">
