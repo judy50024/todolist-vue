@@ -20,7 +20,6 @@
                     Add
                 </button>   
 
-                <!-- <input type="submit" value="add" @click="storeTodo"> -->
             </div>
             <div v-else class="input-wrap">
                 <input type="text" v-model="todo" @keyup.enter="storeTodo">
@@ -30,15 +29,21 @@
             <ul>
                 <li v-for="(todo, index) in todos">
                     <span class="list-wrap">
-                        <input type="checkbox">
-                        <span>{{ todo }}</span>
+    
+                        <input type="checkbox" id="done">
+                        <span>
+                            {{ todo }}              
+                        </span>
+                        &nbsp
+                        <input type="checkbox" id="star">
+          
                     </span>
                     <span class="button-wrap">
-                        <button @click="editTodo(index, todo)">
+                        <button @click="editTodo(index, todo)" class="edit">
                             <i class="fas fa-edit"></i>
                             Edit
                         </button>
-                        <button @click="deleteTodo(index)">
+                        <button @click="deleteTodo(index)" class="delete">
                             <i class="fas fa-trash-alt"></i>
                             Delete
                         </button>
