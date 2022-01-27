@@ -63,6 +63,12 @@
                 storeTodo(){
                     this.todos.push(this.todo)
                     this.todo = ''
+                    function empty(){
+                    var value = this.todo.trim;
+                    if(value){
+                        return;
+                        }
+                    }
                 },
 
                 editTodo(index, todo){
