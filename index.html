@@ -14,7 +14,7 @@
             <h1>Todo List</h1>
 
             <div v-if="!isEditing" class="input-wrap">
-                <input type="text" v-model="todo" @keyup.enter="storeTodo" placeholder="Input your task...">
+                <input type="text" v-model.trim="todo" @keyup.enter="storeTodo" placeholder="Input your task...">
                 <button @click="storeTodo"> 
                     <i class="fas fa-plus"></i>
                     Add
@@ -22,7 +22,7 @@
 
             </div>
             <div v-else class="input-wrap">
-                <input type="text" v-model="todo" @keyup.enter="storeTodo">
+                <input type="text" v-model="todo" @keyup.enter="updateTodo">
                 <input type="submit" value="update" @click="updateTodo">
             </div>
 
@@ -66,14 +66,13 @@
             },
             methods:{
                 storeTodo(){
+                    let empty = ""
+                    if(this.todo == empty){
+                        alert ('Please input a task')
+                        return
+                    }
                     this.todos.push(this.todo)
                     this.todo = ''
-                    function empty(){
-                    var value = this.todo.trim;
-                    if(value){
-                        return;
-                        }
-                    }
                 },
 
                 editTodo(index, todo){
@@ -85,7 +84,7 @@
                 updateTodo(index){
                     this.todos.splice(this.selectedIndex, 1, this.todo)
                     this.isEditing = false
-                    this.todo = ''
+                    this.todo = null
                 },
 
                 deleteTodo(todo,index){
