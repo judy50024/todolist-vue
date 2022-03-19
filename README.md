@@ -9,4 +9,4 @@
 - Delete
 - Star
 
-Tech: Vue / SASS
+Tech: Vue / SCSS
